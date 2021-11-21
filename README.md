@@ -8,7 +8,10 @@ Contains the problem definition
 ##### Examples
 Contains example (problem instances) for better understanding
 
-##### Results
+##### Input Format Description
+contains input format
+
+##### Output Format Description
 Contains expected results
 
 ##### Constraints
