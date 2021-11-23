@@ -33,26 +33,30 @@ import random
 import re
 import sys
 
+
 def birthday_cake_candles(candles):
-	"""
-	The idea is to use a dictionnary to count the number of
-	occurence of each number and take the maximum key with it value
-	"""
-	candles_map = {}
+    """
+    The idea is to use a dictionnary to count the number of
+    occurence of each number and take the maximum key with it value
 
-	# init candle map
-	for candle in candles:
-		candles_map[candle] = 0
+    Time Complexity: O(n)
+    """
+    candles_map = {}
 
-	# count the number of candles
-	for candle in candles:
-		candles_map[candle] += 1
+    # init candle map
+    for candle in candles:
+        candles_map[candle] = 0
 
-	max_candle = max(candles)
+    # count the number of candles
+    for candle in candles:
+        candles_map[candle] += 1
 
-	return candles_map[max_candle]
+    max_candle = max(candles)
 
-if __name__ == '__main__':
+    return candles_map[max_candle]
+
+
+if __name__ == "__main__":
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     candles_count = int(input().strip())
