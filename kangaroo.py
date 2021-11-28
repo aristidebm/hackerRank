@@ -18,11 +18,11 @@ After one jump, they are both at x=3, (x1 + v1 = 3, x2 + v2 = 3), so the answer 
 
 Input Format Description
 ------------------------
-string: either YES or NO
+A single line of four space-separated integers denoting the respective values of x1, v1, x2 and v2.
 
 Output Format Description
 -------------------------
-A single line of four space-separated integers denoting the respective values of x1, v1, x2 and v2.
+string: either YES or NO
 
 Constraints
 -----------
