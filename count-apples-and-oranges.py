@@ -48,12 +48,16 @@ import sys
 
 
 def count_apples_and_oranges(s, t, a, b, apples, oranges):
-    sam_house = set(range(s, t + 1))
-    apples_pos = set(map(lambda x: a + x, apples))
-    oranges_pos = set(map(lambda x: b + x, oranges))
-    sam_apples = len(apples_pos & sam_house)
-    sam_oranges = len(oranges_pos & sam_house)
-    print(f"{sam_apples}\n{sam_oranges}")
+    sam_house = range(s, t + 1)
+    num_apples, num_oranges = 0, 0
+    for apple in apples:
+        if apple > 0 and a + apple in sam_house:
+            num_apples += 1
+
+    for orange in oranges:
+        if orange < 0 and b + orange in sam_house:
+            num_oranges += 1
+    print(f"{num_apples}\n{num_oranges}")
 
 
 if __name__ == "__main__":
