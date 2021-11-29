@@ -7,7 +7,6 @@ Maria plays college basketball and wants to go pro. Each season she maintains a 
 
 Examples
 --------
-
 scores = [12, 24, 10, 24]
 Scores are in the same order as the games played. She tabulates her results as follows:
 																	
@@ -71,7 +70,3 @@ if __name__ == "__main__":
     print("\n")
 
     # fptr.close()
-# 10
-# 3 4 21 36 10 28 35 5 24 42
-# 9
-# 10 5 20 20 4 5 2 25 1
