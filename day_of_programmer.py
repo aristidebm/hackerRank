@@ -57,7 +57,7 @@ def _find_julian_day(year: int, day: int):
     # In 1918 the next day after January 31st was February 14th and 1918 is not leap
     # so February duration for that year is 14.
     if year == 1918:
-        cp[1] = 14
+        cp[1] = 15
 
     if is_julian_leap_year(year):
         cp[1] = 29
