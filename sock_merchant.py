@@ -24,6 +24,22 @@ constraints
 -----------
 + 1 < n <= 100
 + 1 <= arr[i] <= 100 where 0 <= i < n
+
+Improved solution ()
+--------------------
+```python
+def sock_merchant(n, ar):
+    return sum([ar.count(i)//2 for i in set(ar)])
+```
+
+What do you Learn New ?
+-----------------------
+The logic that is used is with defaultdict structure
+is in reality an already defined Structure in python `collections` module that is called `Counter`.
+
+[source](https://docs.python.org/3/library/collections.html#counter-objects)
+
+A Counter is a dict subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. Counts are allowed to be any integer value including zero or negative counts. The Counter class is similar to bags or multisets in other languages.
 """
 import math
 import os
