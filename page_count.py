@@ -70,6 +70,7 @@ def page_count(n, p):
     return min(p // 2, (n + 1 - p) // 2 if n % 2 == 0 and n - p == 1 else (n - p) // 2)
 
 
+4
 if __name__ == "__main__":
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
