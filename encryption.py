@@ -1,11 +1,29 @@
 # [source](https://www.hackerrank.com/challenges/bigger-is-greater/problem?isFullScreen=true&h_r=next-challenge&h_v=zen)
 
+"""
+A pretty simple and elegant solution found in discussion board.
+
+1. prendre le premier caractere, faire un pas du nombre de colonne ainsi de suite jusqu'a atteindre la fin de la chaine.
+2. prendre le second caractere, faire un pas du nombre de colonne ainsi de suite jusqu'a atteindre la fin de la chaine.
+3. continue le processus jusqu'a ce qu'on ne (nombre de colonne)-ieme caractere.
+
+import math
+
+sm=s.replace(" ","")
+r=math.floor(math.sqrt(len(sm)))
+c=math.ceil(math.sqrt(len(sm)))
+
+for i in range(c):
+    print(sm[i::c],end=" ")
+
+"""
+
 import math
 
 
 def encryption(s):
     # find row and column
-    s = "".join(s.split(" "))
+    s = s.replace(" ", "")
     L = len(s)
     row = math.floor(math.sqrt(L))
     col = math.ceil(math.sqrt(L))
