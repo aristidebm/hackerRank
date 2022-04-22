@@ -43,9 +43,10 @@ def surfaceArea(A):
     M = len(A)
     N = len(A[0])
 
-    # bottom and top side.
+    # Bottom and top side.
     surface = 2 * M * N
 
+    # Other side surface
     for i in range(M):
         for j in range(N):
             if in_grid(A, i, j - 1):
