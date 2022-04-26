@@ -14,16 +14,21 @@ import sys
 #  1. INTEGER n
 #  2. INTEGER k
 #
+# Algorithm :
+# 1. On genere un tableau des "n" premiers entiers P.
+# 2. Pour chaque P[i], on cherche un element j tel que |P[j] - i| = k.
+# 3. Si un tel element existe, echanger P[i] et P[j].
+# 4. Sinon renvoyer - 1 car Pour tout i, il doit exister cet element j pour qu'on puisse parler de permutation absolue.
 
-# Fail for time limit exceed
+# Fail for time limit exceed : O(n ^ 2)
 def absolutePermutation(n, k):
     P = list(range(1, n + 1))
+
     for i, el in enumerate(P, start=1):
 
         if abs(P[i - 1] - i) == k:  # nothing to do.
             continue
 
-        # find j so that |P[j] - i| = k
         for j in range(i, n):  # list is 0-based index, we have to reduce by one.
             if abs(P[j] - i) == k:
                 P[j], P[i - 1] = P[i - 1], P[j]
@@ -33,6 +38,27 @@ def absolutePermutation(n, k):
         # we must return - 1
         if j == n - 1 and abs(P[i - 1] - i) != k:
             return [-1]
+
+    return P
+
+
+# Optimized solution : O(n)
+def absolutePermutation(n, k):
+    P = list(range(1, n + 1))
+    i = 1
+    while (j := k + i) <= n:
+        if abs(P[i - 1] - i) == k:
+            i += 1
+            continue
+        elif abs(P[j - 1] - i) == k:
+            P[j - 1], P[i - 1] = P[i - 1], P[j - 1]
+            i += 1
+            continue
+
+        return [-1]
+
+    if not all(abs(P[i] - (i + 1)) == k for i in range(n)):
+        return [-1]
 
     return P
 
