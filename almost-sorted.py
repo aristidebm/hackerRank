@@ -24,7 +24,6 @@ import operator
 
 
 class Solution:
-
     def almostSorted(self, arr):
 
         if self.isSorted(arr):
@@ -78,11 +77,12 @@ class Solution:
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     n = int(input().strip())
     array = list(map(int, input().rstrip().split()))
     s = Solution()
     s.almostSorted(array)
+
 
 def almostSorted(self, arr):
 
@@ -114,9 +114,11 @@ def almostSorted(self, arr):
 
     print("no")
 
+
 def swap(self, arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
     return arr
+
 
 def findLeftWrongIndex(self, arr):
     idx = 0
@@ -124,11 +126,13 @@ def findLeftWrongIndex(self, arr):
         idx += 1
     return idx
 
+
 def findRightWrongIndex(self, arr):
     idx = len(arr) - 1
     while idx > 0 and arr[idx] > arr[idx - 1]:
         idx -= 1
     return idx
+
 
 def isSorted(self, arr):
     for i in range(len(arr) - 1):
