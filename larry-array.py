@@ -25,6 +25,7 @@ import sys
 # In our case, N = 3 which is odd, so we just have to compute the number of inversion and check whether it is even or not
 # 1. if it is even, we can sort with rotation
 # 2. otherwise, we cannot sort it.
+# Check this https://www.math.utah.edu/mathcircle/notes/permutations.pdf for more explanation about why it works.
 
 def larrysArray(A):
     number_of_inversion = 0
