@@ -1,23 +1,18 @@
 # [source](https://www.hackerrank.com/challenges/two-pluses/problem?isFullScreen=true)
 
-# A pretty goog explanation can be found here https://www.youtube.com/watch?v=COYqFbIAAOs
-
-# Remarques :
-# ----------
-# 1. Le croix d'aires egale a 1 ne nous interessent pas, elle n'apporte aucune information au calcul d'aire.
-# 2. Toutes les croix valides on une aire de la forme A = 2 ^ n + 1 avec n un entier naturel.
-# 3. Pour ces croix, la cellule du milieu ne peut se trouver ni sur la premiere ligne, ni sur la derniere ligne
-# ni sur la premiere colonne, ni sur la derniere colonne.
-#
 # Algorithm
 # ---------
+
 # Well Explained here https://www.youtube.com/watch?v=COYqFbIAAOs
+# The approach is a greedy approach, we can't do better than that, though we have to check all valid pluses of grid
+
 # 0. Initialize the area to 0
-# 1. Find the plus and colorized it (in the code, the color is *)
-# 2. Keeping the above plus colorized, loop through the grid to find the second plus that does not overlap with above
-# 3. Compute the product of the two found pluses and compute the area as
-# area = (area, first_plus_area * second_plus_area)
-# 4. Go to step 1 and find another valid plus and repeat the process.
+# 1. Begin with plus (A) with area 1 if exists, mark the plus as visited.
+# 2. Keeping the above plus mark as visited, Loop through the grid to find respectively a plus with area 1, 5, ..., 4n + 1
+# 3. For Each plus in above, compare area with product (area(A) * 4*n + 1) and take the maximum each time.
+# 4. Change the Grid to it's initial state (by umarking the plus with area 1)
+# 5. Iteratively find the pluses of area 5, 9, ..., 4*n + 1 and for each plus mark them as visited and repeat the steps
+# 2 to 4.
 
 #!/bin/python3
 
@@ -121,6 +116,8 @@ if __name__ == "__main__":
     result = Solution().tow_pluses(grid)
 
     print(result)
+
+# samples
 
 # 5 6
 # GGGGGG
